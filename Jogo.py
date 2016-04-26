@@ -1,16 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 25 15:05:32 2016
-
-@author: moreira
-"""
 import numpy as np
 class Jogo:
     def __init__(self):
         self.jogadas=1
         self.a=np.zeros((3,3))
         self.jogador=1
-        self.string_var='Vez do X'
+        self.string_var='Próxima jogada: X'
      
         
         
@@ -18,11 +12,11 @@ class Jogo:
        self.a[linha][coluna]=self.jogador
        if self.jogador==1:
            self.jogador=4
-           self.string_var='Vez do X'
+           self.string_var='Próxima jogada: O'
            
        elif self.jogador==4:
            self.jogador=1
-           self.string_var='Vez do O'
+           self.string_var='Próxima jogada: X'
 
    #Funções Jogo
 
