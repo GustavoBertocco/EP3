@@ -128,8 +128,8 @@ class Tabuleiro:
         else:
             letra='O'
         self.botao0_0.configure(text=letra,font='Arial 30 bold',state='disable')
+        self.jogo.recebe_jogada(0,0)
         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
-        self.jogo.recebe_jogada(0,0)          
         self.ganhou()            
                 
     def botao0_1_clicado(self):
