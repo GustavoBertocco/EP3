@@ -23,10 +23,7 @@ class Jogo:
        elif self.jogador==4:
            self.jogador=1
            self.string_var='Vez do O'
-#       else:
-#           self.string_var='Vez do O'
-#           self.jogador=1
-               
+
    #Funções Jogo
 
 
