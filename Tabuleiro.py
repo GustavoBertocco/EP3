@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 19 07:41:54 2016
-
-@author: moreira
-"""
 import tkinter as tk
 import Jogo
 import numpy as np
@@ -75,7 +69,7 @@ class Tabuleiro:
         self.jogo.jogadas=1
         self.jogo.a=np.zeros((3,3))
         self.jogo.jogador=1
-        self.jogo.string_var='Vez do X'
+        self.jogo.string_var='Próxima jogada : X'
         self.botao0_0=tk.Button(self.window)
         self.botao0_0.configure(command=self.botao0_0_clicado)
         self.botao0_0.grid(row=0,column=0,sticky='nsew')
@@ -114,8 +108,8 @@ class Tabuleiro:
         
         
         
-        self.label_status=tk.Label()
-        self.label_status.configure(text='Vez do X', font='Arial 20 bold')
+       
+        self.label_status.configure(text='Próxima jogada: X', font='Arial 20 bold', fg = 'black')
         self.label_status.grid(row=3,column=0,columnspan=3)
         
    
@@ -138,8 +132,8 @@ class Tabuleiro:
          else:
             letra='O'
          self.botao0_1.configure(text=letra,font='Arial 30 bold',state='disable')
-         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
-         self.jogo.recebe_jogada(0,1)          
+         self.jogo.recebe_jogada(0,1)         
+         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')                  
          self.ganhou()
 
                 
@@ -149,8 +143,8 @@ class Tabuleiro:
         else:
             letra='O'
         self.botao0_2.configure(text=letra,font='Arial 30 bold',state='disable')
-        self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
-        self.jogo.recebe_jogada(0,2)          
+        self.jogo.recebe_jogada(0,2)         
+        self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')                 
         self.ganhou()
 
         
@@ -160,8 +154,8 @@ class Tabuleiro:
          else:
             letra='O'
          self.botao1_0.configure(text=letra,font='Arial 30 bold',state='disable')
-         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
          self.jogo.recebe_jogada(1,0)          
+         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')                 
          self.ganhou()
         
     def botao1_1_clicado(self):
@@ -170,8 +164,9 @@ class Tabuleiro:
         else:
             letra='O'
         self.botao1_1.configure(text=letra,font='Arial 30 bold',state='disable')
+        self.jogo.recebe_jogada(1,1)        
         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
-        self.jogo.recebe_jogada(1,1)          
+                
         self.ganhou()
         
     def botao1_2_clicado(self):
@@ -180,8 +175,9 @@ class Tabuleiro:
          else:
             letra='O'
          self.botao1_2.configure(text=letra,font='Arial 30 bold',state='disable')
-         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
          self.jogo.recebe_jogada(1,2)          
+         self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
+                  
          self.ganhou()
         
     def botao2_0_clicado(self):
@@ -190,8 +186,8 @@ class Tabuleiro:
          else:
             letra='O'
          self.botao2_0.configure(text=letra,font='Arial 30 bold',state='disable')
+         self.jogo.recebe_jogada(2,0)           
          self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
-         self.jogo.recebe_jogada(2,0)          
          self.ganhou()
         
     def botao2_1_clicado(self):
@@ -200,8 +196,9 @@ class Tabuleiro:
          else:
             letra='O'
          self.botao2_1.configure(text=letra,font='Arial 30 bold',state='disable')
+         self.jogo.recebe_jogada(2,1)         
          self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
-         self.jogo.recebe_jogada(2,1)          
+                   
          self.ganhou()
 
         
@@ -211,8 +208,9 @@ class Tabuleiro:
          else:
             letra='O'
          self.botao2_2.configure(text=letra,font='Arial 30 bold',state='disable')
+         self.jogo.recebe_jogada(2,2)         
          self.label_status.configure(text=self.jogo.string_var,font='Arial 20 bold')
-         self.jogo.recebe_jogada(2,2)          
+                   
          self.ganhou()
 
 
@@ -254,6 +252,10 @@ tab=Tabuleiro()
 tab.iniciar()
 
 
+
+    
+
+              
 
     
 
